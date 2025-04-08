@@ -17,16 +17,74 @@
     padding: 10px;
 }
 
-a{
-    text-decoration: none;
-    padding: 10px;
-    font-size: 1.1em;
+#postagens{
+    padding: 15px;
+    width: 920px;
+    margin: auto;
+    margin-top: 20px;
 }
 
+.postagem {
+    padding: 15px;
+    background: whitesmoke;
+    width: 640px;
+    float: left;
+    margin-bottom: 20px; /* separa uma postagem da outra */
+}
+
+#img-1{
+    width: 620px;
+    margin: 0 auto;
+}
+
+#area-lateral{
+    width: 240px;
+    float: right;
+    
+    
+}
+#rodape{
+    clear: both;
+    text-align: center;
+    background: rgb(112, 107, 107);
+    padding: 15px;
+    font-size: 1.1em;
+    
+}
+.conteudo-lateral {
+    background: whitesmoke;
+    padding: 15px;
+    margin-bottom: 25px;
+
+}
+
+
+a{
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1.1em;
+    color: #f7b600;
+}
 a:link, a:visited{
-    color: white;
+    color: #f7b600;
 }
 a:hover{
+    text-decoration: underline;
+}
+#cabeçalho a:link, #cabeçalho a:visited{
+    color: white;
+}
+#cabeçalho a:hover{
     color: #f7b600;
     background: white;
+}
+
+
+h3{
+    color: #565656;
+    background: #ccc;
+    padding: 5px;
+}
+p{
+    text-align: left;
 }
