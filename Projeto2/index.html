@@ -28,15 +28,13 @@
       input::placeholder{
         color: red!important
       }
-      input{
-        background: rgb(177, 171, 171)!important
-      }
+      
       .navbar{
         background: black;
       }
     </style>
 
-    <script src="../JavaScript/teste.js"></script>
+    <script src="funcoes.js"></script>
   </head>
 
   <body>
@@ -61,19 +59,21 @@
               <form>
 
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="E-mail">
+                  <input name="email" type="email" class="form-control" placeholder="E-mail" onfocus="console.log('recebeu o foco')">
                 </div>
                 
                 <div class="form-group">
-                  <input name="senha" type="password" class="form-control" placeholder="Senha"">
+                  <input name="senha" type="password" class="form-control" placeholder="Senha" onfocus="console.log('foco')">
                 </div>
 
-                <button class="btn btn-lg btn-info btn-block" type="submit" onclick="botao_teste()">Entrar</button>
+                <button class="btn btn-lg btn-info btn-block" type="submit" onclick="getTexto(event)">Entrar</button>
 
               </form>
 
             </div>
           </div>
+        </div>
+        <div id = "cor" style="background-color: rgb(48, 45, 45); width: 250px; height: 200px; margin-top: 100px; padding: 20px;">
         </div>
     </div>
   </body>
