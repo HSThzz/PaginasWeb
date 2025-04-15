@@ -12,5 +12,17 @@ function getTexto(){
     
     //alert("E-mail: " + email + "\nSenha: " + senha);
     apareceTexto(email, senha)
+    tabuada()
     
 }
+
+function tabuada () {
+    for (var i = 1; i <= 10; i++) {
+        for (var j = 1; j <= 10; j++) {
+            var tabuada = i * j;
+            document.getElementById('cor').innerText += (i + " x " + j + " = " + tabuada + "\n");
+        }
+        document.getElementById('cor').innerText += "\n"; // quebra entre cada número da tabuada
+    }
+}
+
