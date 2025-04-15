@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecionar Nível</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      cursor: url('../JogoMataMosquito/imagens/mata_mosca.png'), auto;
+      font-size: 1em;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #fundo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #titulo {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+    }
+
+    #nivel {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    #inicio{
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #botao{
+        background: red;
+        border-radius: 10px;
+        padding: 20px;
+        width: 180px;
+        font-size: 1.5em;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="fundo" src="imagens/bg.jpg" alt="Fundo">
+    <img id="titulo" src="imagens/game.png" alt="Título"> <!-- Aqui está o título que estava faltando -->
+    <select id="nivel">
+      <option disabled selected>-- Selecione o nível --</option>
+      <option value="normal">Normal</option>
+      <option value="dificil">Difícil</option>
+      <option value="chuck">Chuck Norris</option>
+    </select>
+    <div id = "inicio">
+        <button id = "botao" type="button"><a href="game.html">Iniciar Jogo</a></button>
+    </div>
+  </div>
+</body>
+</html>
