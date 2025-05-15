@@ -1,0 +1,7 @@
+{
+  "name": "projeto-cpf",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "validacpf.js"
+}
+  
