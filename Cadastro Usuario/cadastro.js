@@ -99,7 +99,7 @@ class Cadastro extends Cpf{
             erro.innerText = 'Nome nao pode estar vazio'
             erro.classList.add('erro-n') // para identificar o erro no futuro
             pai.appendChild(erro)
-            return
+            return false
         }
     
     }
@@ -116,7 +116,7 @@ class Cadastro extends Cpf{
             erro.innerText = 'Sobrenome nao pode estar vazio'
             erro.classList.add('erro-so') // para identificar o erro no futuro
             pai.appendChild(erro)
-            return
+            return false
         }
     
     }
@@ -136,14 +136,14 @@ class Cadastro extends Cpf{
             erro.innerText = 'Cpf nao pode estar vazio'
             erro.classList.add('erro-c') // para identificar o erro no futuro
             pai.appendChild(erro)
-            return
+            return false
         }
         if(!this.Valida()){
             const erro = document.createElement('p')
             erro.innerText = 'Cpf inexistente'
             erro.classList.add('erro-cpf') // para identificar o erro no futuro
             pai.appendChild(erro)
-            return
+            return false
         }
     }
     validaUsuario(){
@@ -151,6 +151,7 @@ class Cadastro extends Cpf{
         
         const erroVazio = document.querySelector('.erro-u')
         if(erroVazio) this.removeErro(erroVazio)
+
         const erroLetras = document.querySelector('.erro-u2')
         if(erroLetras) this.removeErro(erroLetras)
 
@@ -160,6 +161,7 @@ class Cadastro extends Cpf{
             erro.innerText = 'Usuário deve ter entre 3 e 12 caracteres'
             erro.classList.add('erro-u') // para identificar o erro no futuro
             pai.appendChild(erro)
+            return false
         }
         
             // Verifica se só contém letras e números
@@ -169,6 +171,7 @@ class Cadastro extends Cpf{
             erro.classList.add('erro-u2')
             erro.style.color = 'red'
             pai.appendChild(erro)
+            return false
         }
     }
     validaSenha(){
@@ -183,7 +186,7 @@ class Cadastro extends Cpf{
             erro.innerText = 'Senha deve ter entre 6 e 12 letras'
             erro.classList.add('erro-s') // para identificar o erro no futuro
             pai.appendChild(erro)
-            return
+            return false
         }
 
     }
@@ -191,13 +194,19 @@ class Cadastro extends Cpf{
     removeErro(erro){
         erro.remove()
     }
-    executa(){
-        this.validaNome()
-        this.validaSobrenome()
-        this.validaCpfInterno()
-        this.validaUsuario()
-        this.validaSenha()
+
+    executa() {
+    let a = this.validaNome()
+    let b = this.validaSobrenome()
+    let c = this.validaCpfInterno()
+    let d = this.validaUsuario()
+    let e = this.validaSenha()
+
+    if ((a || b || c || d || e) === false) {
+        return false; // erro detectado
     }
+    return true; // passou nas validações
+}
    
 }
 
@@ -205,9 +214,12 @@ function cadastro(){
         document.addEventListener('click', (e)=>{
         const el = e.target
         if(el.classList.contains('botao')){
-            const p1 = new Cadastro()
-            console.log(p1)
-            p1.executa()
+            const temp = new Cadastro()
+            if(temp.executa()){
+                console.log('Cadastro Valido: ', temp)
+            }else 
+                console.log('Cadastro Invalido')
+
         }    
         })
     }
