@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(14, 73, 60);
+        }
+        h1{
+            text-align: center;
+        }
+        .container{
+            background: white;
+            margin: auto auto;
+            width: 500px;
+            padding: 20px;
+            padding-right: 40px;
+            border-radius: 10px;
+        }
+        .input{
+          width: 100%;  
+          padding: 8px;
+          
+        }
+        .div-botao{
+            text-align: center;
+            margin-top: 40px;
+        }
+        .botao{
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            background: greenyellow;
+            font-size: 25px;
+        }
+        p{
+            font-size: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Cadastro</h1>
+        <div class="pai-requisitos">
+            <ul class="requisitos">
+                <li>Nenhum campo pode estar vazio</li>
+                <li>Usuario so podera conter letras e/ou numeros</li>
+                <li>Usuario deve conter entre 3 e 12 caracteres</li>
+                <li>Senha deve ter entre 6 e 12 caracteres</li>
+            </ul>
+        </div>
+        <div class="container-nome">
+            <h3>Nome:</h3>
+            <input type="text" class="input" id ='nome'>
+        </div>
+        <div class="container-sobrenome">
+            <h3>Sobrenome:</h3>
+            <input type="text" class="input" id="sobrenome">
+        </div>
+        <div class="container-cpf">
+            <h3>CPF:</h3>
+            <input type="number" class="input" id="cpf" maxlength="11" inputmode="numeric" pattern="\d{11}">
+        </div>
+        <div class="container-usuario">
+            <h3>Usuario:</h3>
+            <input type="text" class="input" id="usuario">
+        </div>
+        <div class="container-senha">
+            <h3>Senha:</h3>
+            <input type="password" class="input" id="senha">
+        </div>
+        <div class="div-botao">
+            <button class="botao">Cadastre-se</button>
+        </div>
+    </div>
+    <script src="cadastro.js"></script>
+</body>
+</html>
