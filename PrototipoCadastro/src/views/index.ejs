@@ -1,0 +1,25 @@
+<%- include('includes/header') %>
+
+
+  <section class="container">
+    <% if (flash && flash.sucesso && flash.sucesso.length > 0) { %>
+  <div class="mensagem-sucesso">
+    <%= flash.sucesso[0] %>
+  </div>
+<% } else if (flash && flash.erro && flash.erro.length > 0) { %>
+  <div class="mensagem-erro">
+    <%= flash.erro[0] %>
+  </div>
+<% } %>
+    <h1>
+      Formulario
+    </h1>
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label for="">Cliente</label>
+      <input type="text" name="cliente" id="">
+      <button>Submit</button>
+    </form>
+  </section>
+
+<%- include('includes/footer') %>
