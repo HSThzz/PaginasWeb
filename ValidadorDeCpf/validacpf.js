@@ -1,5 +1,5 @@
 
-
+//
 import { CriaCpf, Valida } from './funcoesValidaCpf.js'
 
 const p1 = new CriaCpf(70548445052)
